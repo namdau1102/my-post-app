@@ -28,4 +28,4 @@ jobs:
     - run: yarn install
     - run: npx eyes-storybook
       env:
-        APPLITOOLS_API_KEY: ${{secrets.APITOOLS_API_KEY}}
+        APPLITOOLS_API_KEY: ${{secrets.}}
