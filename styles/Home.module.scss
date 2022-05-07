@@ -1,0 +1,49 @@
+$primary-color: #0070f3;
+
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  max-width: 800px;
+  padding: 5rem 0;
+}
+.title a {
+  color: $primary-color;
+  text-decoration: $primary-color;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  text-align: center;
+  font-size: 4rem;
+}
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+.posts {
+  list-style: none;
+  padding: 0;
+  margin: 5em 0;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
