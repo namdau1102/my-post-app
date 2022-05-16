@@ -12,6 +12,7 @@ import { logOut } from '../src/lib/auth'
 import { useEffect, useState } from 'react'
 import { createPosts, getAllPosts, getALlPosts } from '../src/lib/posts'
 export default function Home({ posts: defaultPosts }) {
+
   const { user, logIn, logOut } = useAuth();
   const [posts, updatePosts] = useState(defaultPosts)
   const postsSorted = posts.sort((a, b) => {
