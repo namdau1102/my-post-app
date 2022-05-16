@@ -76,7 +76,7 @@ export default function Home({ posts: defaultPosts }) {
     </div>
   )
 }
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const posts = await getAllPosts();
   return {
     props: {
