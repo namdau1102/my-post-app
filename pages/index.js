@@ -10,7 +10,7 @@ import Bio from '../src/Components/Bio/Bio'
 import { useAuth } from '../src/hooks/useAuth'
 import { logOut } from '../src/lib/auth'
 import { useEffect, useState } from 'react'
-import { createPosts, getALlPosts } from '../src/lib/posts'
+import { createPosts, getAllPosts, getALlPosts } from '../src/lib/posts'
 export default function Home({ posts: defaultPosts }) {
   const { user, logIn, logOut } = useAuth();
   const [posts, updatePosts] = useState(defaultPosts)
@@ -56,12 +56,15 @@ export default function Home({ posts: defaultPosts }) {
               <div className={""}><div></div><div></div><div></div><div></div></div>
               <h2>Đang tải</h2>
             </> : postsSorted.map(post => {
-              const { content, id, date } = post
+              const { content, id, date, account } = post
               return (
                 <li key={id}>
                   <Post
                     content={content}
-                    date={new Intl.DateTimeFormat('en-US').format(new Date(date))} />
+                    date={new Intl.DateTimeFormat('en-US').format(new Date(date))}
+                    user={account}
+                  />
+
                 </li>
 
               )
@@ -76,10 +79,10 @@ export default function Home({ posts: defaultPosts }) {
   )
 }
 export const getStaticProps = async () => {
-  // const posts = await getALlPosts();
+  const posts = await getAllPosts();
   return {
     props: {
-      posts: []
+      posts
     }
   }
 }

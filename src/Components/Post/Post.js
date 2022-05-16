@@ -1,8 +1,10 @@
 import styles from './Home.module.scss'
 import { FaHeart, FaShareAlt } from 'react-icons/fa'
-const Post = ({ content, date }) => {
+const Post = ({ content, date, user }) => {
     return (
         <>
+
+            <h4> {user}  </h4>
             <p className={styles.postsContent}>
                 {content}
             </p>

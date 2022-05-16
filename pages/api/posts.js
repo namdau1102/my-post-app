@@ -1,6 +1,10 @@
+import { useAuth } from "../../src/hooks/useAuth";
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req, res) => {
     console.log("req method: " + req.method)
+    const { user, logIn, logOut } = useAuth();
+
     if (req.method === "GET") {
 
         const response = await fetch(`https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/Projects`, {
@@ -39,7 +43,8 @@ export default async (req, res) => {
                 {
                     fields: {
                         content,
-                        date: new Date().toISOString()
+                        date: new Date().toISOString(),
+                        account: user && user.email
                     }
                 }
             ]

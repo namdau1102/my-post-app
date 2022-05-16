@@ -1,10 +1,11 @@
 import { auth } from "./auth";
 
-
-
-export const getALlPosts = async () => {
-    const responseGet = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/posts`);
+export const getAllPosts = async () => {
+    const responseGet = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/posts`, {
+        'Content-Type': 'application/json'
+    });
     const { posts } = await responseGet.json();
+    // console.log(posts)
     return posts;
 }
 export const createPosts = async (data) => {
