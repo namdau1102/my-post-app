@@ -2,7 +2,6 @@ import { useAuth } from '../../hooks/useAuth';
 import styles from './PostForm.module.scss'
 const PostForm = ({ onSubmit }) => {
     const { user } = useAuth();
-    console.log(user && user.email)
     const handleOnSubmit = (e) => {
         const { currentTarget } = e;
         const field = Array.from(currentTarget.elements)

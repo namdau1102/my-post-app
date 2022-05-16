@@ -5,10 +5,8 @@ import Post from '../src/Components/Post'
 import styles from '../styles/Home.module.scss'
 
 import PostForm from '../src/Components/PostForm'
-import loadings from '../styles/Loading.module.scss'
 import Bio from '../src/Components/Bio/Bio'
 import { useAuth } from '../src/hooks/useAuth'
-import { logOut } from '../src/lib/auth'
 import { useEffect, useState } from 'react'
 import { createPosts, getAllPosts } from '../src/lib/posts'
 export default function Home({ posts: defaultPosts }) {
@@ -82,7 +80,7 @@ export const getStaticProps = async () => {
   const posts = await getAllPosts();
   return {
     props: {
-      posts:[]
+      posts: []
     }
   }
 }
