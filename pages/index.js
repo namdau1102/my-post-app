@@ -21,7 +21,7 @@ export default function Home({ posts: defaultPosts }) {
   const handleOnSubmit = async (data, e) => {
     e.preventDefault();
     await createPosts(data)
-    const posts = await getALlPosts();
+    const posts = await getAllPosts();
     updatePosts(posts)
   }
   return (

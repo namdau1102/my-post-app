@@ -15,6 +15,7 @@ const PostForm = ({ onSubmit }) => {
     }
     return (
         <form onSubmit={handleOnSubmit} className={styles.formPost}>
+            <input type="hidden" name="account" value={""} />
             <textarea name="content" placeholder="" className={styles.formContent}></textarea>
             <button className={styles.formButton}>Add New Tweet</button>
         </form>
