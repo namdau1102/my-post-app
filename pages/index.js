@@ -83,7 +83,7 @@ export const getStaticProps = async () => {
   const posts = await getAllPosts();
   return {
     props: {
-      posts
+      posts:[]
     }
   }
 }
