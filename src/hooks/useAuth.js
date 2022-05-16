@@ -19,7 +19,6 @@ export const AuthProvider = ({ children }) => {
     }, []);
     function logIn() {
         authLogin();
-        console.log('Log in!');
     }
     function logOut() {
         authLogOut(() => {

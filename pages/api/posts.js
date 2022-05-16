@@ -1,12 +1,6 @@
-import { useAuth } from "../../src/hooks/useAuth";
-
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req, res) => {
-    console.log("req method: " + req.method)
-    const { user, logIn, logOut } = useAuth();
-
-    if (req.method === "GET") {
-
+    if (req.method === 'GET') {
         const response = await fetch(`https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/Projects`, {
             headers: {
                 Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`
@@ -19,6 +13,8 @@ export default async (req, res) => {
                 ...record.fields
             }
         })
+        console.log(posts)
+
         res.status(200).json({ posts })
         return;
     }
@@ -37,14 +33,14 @@ export default async (req, res) => {
             })
             return;
         }
-        const { content } = JSON.parse(req.body)
+        const { content, account } = JSON.parse(req.body)
         const data = {
             records: [
                 {
                     fields: {
                         content,
                         date: new Date().toISOString(),
-                        account: user && user.email
+                        account
                     }
                 }
             ]

@@ -10,7 +10,7 @@ import Bio from '../src/Components/Bio/Bio'
 import { useAuth } from '../src/hooks/useAuth'
 import { logOut } from '../src/lib/auth'
 import { useEffect, useState } from 'react'
-import { createPosts, getAllPosts, getALlPosts } from '../src/lib/posts'
+import { createPosts, getAllPosts } from '../src/lib/posts'
 export default function Home({ posts: defaultPosts }) {
 
   const { user, logIn, logOut } = useAuth();
@@ -54,7 +54,6 @@ export default function Home({ posts: defaultPosts }) {
         <ul className={styles.posts}>
           {
             !postsSorted ? <>
-              <div className={""}><div></div><div></div><div></div><div></div></div>
               <h2>Đang tải</h2>
             </> : postsSorted.map(post => {
               const { content, id, date, account } = post

@@ -1,5 +1,8 @@
+import { useAuth } from '../../hooks/useAuth';
 import styles from './PostForm.module.scss'
 const PostForm = ({ onSubmit }) => {
+    const { user } = useAuth();
+    console.log(user && user.email)
     const handleOnSubmit = (e) => {
         const { currentTarget } = e;
         const field = Array.from(currentTarget.elements)
@@ -15,7 +18,7 @@ const PostForm = ({ onSubmit }) => {
     }
     return (
         <form onSubmit={handleOnSubmit} className={styles.formPost}>
-            <input type="hidden" name="account" value={""} />
+            <input className={styles.inputName} name="account" value={user && user.email} />
             <textarea name="content" placeholder="" className={styles.formContent}></textarea>
             <button className={styles.formButton}>Add New Tweet</button>
         </form>
