@@ -56,17 +56,18 @@ export default function Home({ posts: defaultPosts }) {
                 <h2>Đang tải</h2>
               </> : postsSorted.map((post, index) => {
                 const { content, id, date, account } = post
-                if (index < 10)
-                  return (
-                    <li key={id}>
-                      <Post
-                        content={content}
-                        date={new Intl.DateTimeFormat('en-US').format(new Date(date))}
-                        user={account}
-                      />
+                // if (index < *)
+                return (
+                  <li key={id}>
+                    <Post
+                      content={content}
+                      date={new Intl.DateTimeFormat('en-US').format(new Date(date))}
+                      user={account}
+                      time={new Date(date).getHours() + ' giờ - ' + new Date(date).getMinutes() + ' phút'}
+                    />
 
-                    </li>
-                  )
+                  </li>
+                )
               })
             }
           </div>

@@ -1,9 +1,9 @@
 import styles from './Home.module.scss'
-import { FaHeart, FaShareAlt } from 'react-icons/fa'
-const Post = ({ content, date, user }) => {
+import { FaHeart, FaShareAlt, FaClock } from 'react-icons/fa'
+const Post = ({ content, date, user, time }) => {
     return (
         <>
-
+            {console.log()}
             <h4> {user}  </h4>
             <p className={styles.postsContent}>
                 {content}
@@ -18,7 +18,11 @@ const Post = ({ content, date, user }) => {
                     Share
                 </li>
                 <li className={styles.postsMetaDate}>
+                    <FaClock />
                     {date}
+                </li>
+                <li className={styles.postsMetaTime}>
+                    {time}
                 </li>
             </ul>
         </>

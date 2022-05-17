@@ -73,6 +73,19 @@ $primary-color: #0070f3;
     margin-right: 0.3em;
   }
 }
+.postsMetaTime {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 33px;
+  margin-bottom: 0.4em;
+  margin-right: 0.25em;
+  svg {
+    font-size: 0.85em;
+    margin-right: 0.3em;
+  }
+}
 .postsMeta {
   display: flex;
   align-items: center;

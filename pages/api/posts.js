@@ -39,7 +39,7 @@ export default async (req, res) => {
                 {
                     fields: {
                         content,
-                        date: new Date().toISOString(),
+                        date: new Date().toString(),
                         account
                     }
                 }
