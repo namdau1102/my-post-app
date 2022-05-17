@@ -38,9 +38,18 @@ $primary-color: #0070f3;
 .posts {
   list-style: none;
   padding: 0;
+
+  display: flex;
+  justify-content: space-around;
   margin: 5em 0;
 }
-
+.leftMess {
+  padding-right: 25px;
+  border-right: 3px solid rgb(139, 139, 139);
+  width: calc(70% - 25px);
+  overflow-y: scroll;
+  height: 550px;
+}
 @media (max-width: 600px) {
   .grid {
     width: 100%;

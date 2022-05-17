@@ -55,15 +55,16 @@ $primary-color: #0070f3;
   }
 }
 .postsContent {
-  font-size: 29px;
+  font-size: 23px;
   line-height: 43px;
   margin-bottom: 0.4em;
+  word-break: break-all;
 }
 .postsMetaDate {
   display: flex;
   align-items: center;
   font-weight: 600;
-  font-size: 26px;
+  font-size: 1.3rem;
   line-height: 33px;
   margin-bottom: 0.4em;
   margin-right: 1em;
@@ -75,7 +76,6 @@ $primary-color: #0070f3;
 .postsMeta {
   display: flex;
   align-items: center;
-
   list-style: none;
   padding: 0;
 }

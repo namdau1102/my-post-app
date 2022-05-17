@@ -50,24 +50,29 @@ export default function Home({ posts: defaultPosts }) {
           role="1 Nhà Lập Trình Viên"
         />
         <ul className={styles.posts}>
-          {
-            !postsSorted ? <>
-              <h2>Đang tải</h2>
-            </> : postsSorted.map(post => {
-              const { content, id, date, account } = post
-              return (
-                <li key={id}>
-                  <Post
-                    content={content}
-                    date={new Intl.DateTimeFormat('en-US').format(new Date(date))}
-                    user={account}
-                  />
+          <div className={styles.leftMess}>
+            {
+              !postsSorted ? <>
+                <h2>Đang tải</h2>
+              </> : postsSorted.map((post, index) => {
+                const { content, id, date, account } = post
+                if (index < 10)
+                  return (
+                    <li key={id}>
+                      <Post
+                        content={content}
+                        date={new Intl.DateTimeFormat('en-US').format(new Date(date))}
+                        user={account}
+                      />
 
-                </li>
-
-              )
-            })
-          }
+                    </li>
+                  )
+              })
+            }
+          </div>
+          <div>
+            <h3>Các thành viên hoạt động</h3>
+          </div>
 
         </ul>
         <PostForm onSubmit={handleOnSubmit} />
