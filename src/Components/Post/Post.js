@@ -2,9 +2,8 @@ import styles from './Home.module.scss'
 import { FaHeart, FaShareAlt, FaClock } from 'react-icons/fa'
 const Post = ({ content, date, user, time }) => {
     return (
-        <>
-            {console.log()}
-            <h4> {user}  </h4>
+        <div className={styles.PostitemMess}>
+            <h4 className={styles.postName}> Tên tài khoản :  {user}  </h4>
             <p className={styles.postsContent}>
                 {content}
             </p>
@@ -25,7 +24,7 @@ const Post = ({ content, date, user, time }) => {
                     {time}
                 </li>
             </ul>
-        </>
+        </div>
     )
 }
 export default Post;
